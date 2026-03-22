@@ -17,6 +17,7 @@ import SignInButton from "@/components/Auth/SignInButton";
 const linkKeys = [
   { key: "home", href: "/" },
   { key: "profiles", href: "/profile" },
+  { key: "books", href: "/books" },
   { key: "editor", href: "/profile/editor" },
   { key: "howTo", href: "/how-to" },
   { key: "blog", href: "/blog" },
