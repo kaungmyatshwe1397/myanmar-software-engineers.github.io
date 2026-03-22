@@ -55,13 +55,45 @@ const BooksPage = async () => {
                   className="rounded-3xl border border-white/10 bg-surface/50 p-6 transition-colors hover:border-white/20"
                 >
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h2 className="font-display text-2xl font-semibold text-zinc-100">
-                        {book.title}
-                      </h2>
-                      <p className="mt-2 text-sm text-zinc-400">
-                        by {book.authorName}
-                      </p>
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+                      {book.image && (
+                        <img
+                          src={book.image}
+                          alt={`${book.title} cover`}
+                          className="h-32 w-24 rounded-xl border border-white/10 object-cover"
+                        />
+                      )}
+
+                      <div>
+                        <h2 className="font-display text-2xl font-semibold text-zinc-100">
+                          {book.title}
+                        </h2>
+                        <p className="mt-2 text-sm text-zinc-400">
+                          by {book.authorName}
+                        </p>
+                        {(book.authorEmail || book.authorLink) && (
+                          <div className="mt-3 flex flex-col gap-2 text-sm">
+                            {book.authorEmail && (
+                              <a
+                                href={`mailto:${book.authorEmail}`}
+                                className="text-zinc-400 transition-colors hover:text-prism-cyan"
+                              >
+                                {book.authorEmail}
+                              </a>
+                            )}
+                            {book.authorLink && (
+                              <a
+                                href={book.authorLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-zinc-400 transition-colors hover:text-prism-cyan"
+                              >
+                                {book.authorLink}
+                              </a>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
 
                     <a

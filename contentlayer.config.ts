@@ -57,6 +57,9 @@ const bookFields: FieldDefs = {
   title: { type: "string", required: true },
   authorName: { type: "string", required: true },
   link: { type: "string", required: true },
+  image: { type: "string", required: false },
+  authorEmail: { type: "string", required: false },
+  authorLink: { type: "string", required: false },
 };
 
 export const Book = defineDocumentType(() => ({
