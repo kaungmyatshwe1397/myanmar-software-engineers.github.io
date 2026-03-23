@@ -53,9 +53,26 @@ export const Profile = defineDocumentType(() => ({
   computedFields: computedFields,
 }));
 
+const bookFields: FieldDefs = {
+  title: { type: "string", required: true },
+  authorName: { type: "string", required: true },
+  link: { type: "string", required: true },
+  image: { type: "string", required: false },
+  authorEmail: { type: "string", required: false },
+  authorLink: { type: "string", required: false },
+};
+
+export const Book = defineDocumentType(() => ({
+  name: "Book",
+  filePathPattern: `./books/**/*.mdx`,
+  fields: bookFields,
+  contentType: "mdx",
+  computedFields: computedFields,
+}));
+
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Blog, Profile],
+  documentTypes: [Blog, Profile, Book],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

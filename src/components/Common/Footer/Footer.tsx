@@ -339,9 +339,18 @@ const Footer = () => {
                 {t("profiles")}
               </FooterLink>
               <FooterLink
-                href="/profile/editor"
+                href="/books"
                 color="#22d3ee"
                 index={2}
+                isInView={isInView}
+                mmFont={mmFont}
+              >
+                {t("books")}
+              </FooterLink>
+              <FooterLink
+                href="/profile/editor"
+                color="#fb7185"
+                index={3}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -349,8 +358,8 @@ const Footer = () => {
               </FooterLink>
               <FooterLink
                 href="/blog"
-                color="#fb7185"
-                index={3}
+                color="#fbbf24"
+                index={4}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -359,7 +368,7 @@ const Footer = () => {
               <FooterLink
                 href="/contact-us"
                 color="#fbbf24"
-                index={4}
+                index={5}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -368,8 +377,8 @@ const Footer = () => {
 
               <FooterLink
                 href="/jobs"
-                color="#fbbf24"
-                index={4}
+                color="#fb7185"
+                index={6}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -378,7 +387,7 @@ const Footer = () => {
               <FooterLink
                 href="/how-to-develop-setup"
                 color="#fb7185"
-                index={5}
+                index={7}
                 isInView={isInView}
                 mmFont={mmFont}
               >

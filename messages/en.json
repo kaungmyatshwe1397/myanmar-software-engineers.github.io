@@ -59,6 +59,7 @@
   "nav": {
     "home": "Home",
     "profiles": "Profiles",
+    "books": "Books",
     "editor": "Editor",
     "howTo": "How to",
     "blog": "Blog",
@@ -368,6 +369,7 @@
     "navigate": "Navigate",
     "home": "Home",
     "profiles": "Profiles",
+    "books": "Books",
     "profileEditor": "Profile Editor",
     "blog": "Blog",
     "contactUs": "Contact Us",
