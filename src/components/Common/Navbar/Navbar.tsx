@@ -27,6 +27,7 @@ const linkKeys = [
 const desktopNavWidthByKey: Record<(typeof linkKeys)[number]["key"], string> = {
   home: "w-[7rem]",
   profiles: "w-[6rem]",
+  books: "w-[5.5rem]",
   editor: "w-[5.5rem]",
   howTo: "w-[5.25rem]",
   blog: "w-[4.5rem]",
