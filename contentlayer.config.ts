@@ -62,6 +62,30 @@ const bookFields: FieldDefs = {
   authorLink: { type: "string", required: false },
 };
 
+const classFields: FieldDefs = {
+  title: { type: "string", required: true },
+  description: { type: "string", required: true },
+  instructorName: { type: "string", required: true },
+  classLink: { type: "string", required: true },
+  tags: {
+    type: "list",
+    of: { type: "string" },
+    required: true,
+  },
+  classType: {
+    type: "enum",
+    options: ["online", "In-Person"],
+    required: true,
+  },
+  status: {
+    type: "enum",
+    options: ["active", "completed", "incoming"],
+    required: true,
+  },
+  proofOfAssociation: { type: "string", required: true },
+  image: { type: "string", required: false },
+};
+
 export const Book = defineDocumentType(() => ({
   name: "Book",
   filePathPattern: `./books/**/*.mdx`,
@@ -70,9 +94,17 @@ export const Book = defineDocumentType(() => ({
   computedFields: computedFields,
 }));
 
+export const Class = defineDocumentType(() => ({
+  name: "Class",
+  filePathPattern: `./classes/**/*.mdx`,
+  fields: classFields,
+  contentType: "mdx",
+  computedFields: computedFields,
+}));
+
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Blog, Profile, Book],
+  documentTypes: [Blog, Profile, Book, Class],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
