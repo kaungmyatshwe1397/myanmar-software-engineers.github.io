@@ -17,6 +17,7 @@ import SignInButton from "@/components/Auth/SignInButton";
 const linkKeys = [
   { key: "home", href: "/" },
   { key: "profiles", href: "/profile" },
+  { key: "classes", href: "/classes" },
   { key: "books", href: "/books" },
   { key: "editor", href: "/profile/editor" },
   { key: "howTo", href: "/how-to" },
@@ -27,6 +28,7 @@ const linkKeys = [
 const desktopNavWidthByKey: Record<(typeof linkKeys)[number]["key"], string> = {
   home: "w-[7rem]",
   profiles: "w-[6rem]",
+  classes: "w-[6rem]",
   books: "w-[5.5rem]",
   editor: "w-[5.5rem]",
   howTo: "w-[5.25rem]",

@@ -120,7 +120,10 @@ const FooterLink = ({
       <Component
         href={href}
         {...linkProps}
-        className={cn("relative flex items-center gap-2 text-sm text-zinc-500 transition-colors duration-300 group-hover:text-zinc-200 py-1", mmFont)}
+        className={cn(
+          "relative flex items-center gap-2 text-sm text-zinc-500 transition-colors duration-300 group-hover:text-zinc-200 py-1",
+          mmFont,
+        )}
       >
         <span>{children}</span>
         <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -130,7 +133,9 @@ const FooterLink = ({
         {/* Underline reveal on hover */}
         <span
           className="absolute -bottom-0 left-0 right-6 h-[1px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-          style={{ background: `linear-gradient(90deg, ${color}, transparent)` }}
+          style={{
+            background: `linear-gradient(90deg, ${color}, transparent)`,
+          }}
         />
       </Component>
     </motion.div>
@@ -180,7 +185,12 @@ const SocialLink = ({
       <Icon className="w-4 h-4" style={{ color }} />
     </div>
 
-    <span className={cn("text-sm text-zinc-500 group-hover:text-zinc-300 transition-colors duration-300", mmFont)}>
+    <span
+      className={cn(
+        "text-sm text-zinc-500 group-hover:text-zinc-300 transition-colors duration-300",
+        mmFont,
+      )}
+    >
       {label}
     </span>
 
@@ -271,7 +281,10 @@ const Footer = () => {
 
               {/* Tagline */}
               <motion.p
-                className={cn("mt-4 text-sm text-zinc-500 leading-relaxed max-w-xs", mmFont)}
+                className={cn(
+                  "mt-4 text-sm text-zinc-500 leading-relaxed max-w-xs",
+                  mmFont,
+                )}
                 initial={{ opacity: 0, y: 10 }}
                 animate={
                   isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
@@ -279,9 +292,12 @@ const Footer = () => {
                 transition={{ duration: 0.5, delay: 0.15 }}
               >
                 {t("tagline.prefix")}
-                <span className="text-prism-cyan">{t("tagline.innovate")}</span>,{" "}
-                <span className="text-prism-violet">{t("tagline.collaborate")}</span>,{" "}
-                <span className="text-prism-rose">{t("tagline.build")}</span>
+                <span className="text-prism-cyan">{t("tagline.innovate")}</span>
+                ,{" "}
+                <span className="text-prism-violet">
+                  {t("tagline.collaborate")}
+                </span>
+                , <span className="text-prism-rose">{t("tagline.build")}</span>
                 {t("tagline.suffix")}
               </motion.p>
 
@@ -306,9 +322,18 @@ const Footer = () => {
                       "0 0 4px rgba(52,211,153,0.6)",
                     ],
                   }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 />
-                <span className={cn("font-mono text-[10px] text-zinc-500 uppercase tracking-widest", mmFont)}>
+                <span
+                  className={cn(
+                    "font-mono text-[10px] text-zinc-500 uppercase tracking-widest",
+                    mmFont,
+                  )}
+                >
                   {t("openSource")}
                 </span>
               </motion.div>
@@ -318,7 +343,10 @@ const Footer = () => {
           {/* Navigation column */}
           <div className="md:col-span-3">
             <motion.h4
-              className={cn("font-mono text-[10px] text-zinc-600 uppercase tracking-[0.25em] mb-4", mmFont)}
+              className={cn(
+                "font-mono text-[10px] text-zinc-600 uppercase tracking-[0.25em] mb-4",
+                mmFont,
+              )}
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -326,7 +354,13 @@ const Footer = () => {
               {t("navigate")}
             </motion.h4>
             <nav className="flex flex-col gap-1">
-              <FooterLink href="/" color="#22d3ee" index={0} isInView={isInView} mmFont={mmFont}>
+              <FooterLink
+                href="/"
+                color="#22d3ee"
+                index={0}
+                isInView={isInView}
+                mmFont={mmFont}
+              >
                 {t("home")}
               </FooterLink>
               <FooterLink
@@ -339,9 +373,18 @@ const Footer = () => {
                 {t("profiles")}
               </FooterLink>
               <FooterLink
+                href="/classes"
+                color="#38bdf8"
+                index={2}
+                isInView={isInView}
+                mmFont={mmFont}
+              >
+                {t("classes")}
+              </FooterLink>
+              <FooterLink
                 href="/books"
                 color="#22d3ee"
-                index={2}
+                index={3}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -350,7 +393,7 @@ const Footer = () => {
               <FooterLink
                 href="/profile/editor"
                 color="#fb7185"
-                index={3}
+                index={4}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -359,7 +402,7 @@ const Footer = () => {
               <FooterLink
                 href="/blog"
                 color="#fbbf24"
-                index={4}
+                index={5}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -368,7 +411,7 @@ const Footer = () => {
               <FooterLink
                 href="/contact-us"
                 color="#fbbf24"
-                index={5}
+                index={6}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -378,7 +421,7 @@ const Footer = () => {
               <FooterLink
                 href="/jobs"
                 color="#fb7185"
-                index={6}
+                index={7}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -387,7 +430,7 @@ const Footer = () => {
               <FooterLink
                 href="/how-to-develop-setup"
                 color="#fb7185"
-                index={7}
+                index={8}
                 isInView={isInView}
                 mmFont={mmFont}
               >
@@ -399,7 +442,10 @@ const Footer = () => {
           {/* Community column */}
           <div className="md:col-span-4">
             <motion.h4
-              className={cn("font-mono text-[10px] text-zinc-600 uppercase tracking-[0.25em] mb-4", mmFont)}
+              className={cn(
+                "font-mono text-[10px] text-zinc-600 uppercase tracking-[0.25em] mb-4",
+                mmFont,
+              )}
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
